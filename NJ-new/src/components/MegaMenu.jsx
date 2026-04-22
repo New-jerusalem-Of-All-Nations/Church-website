@@ -16,7 +16,7 @@ export default function MegaMenu({ isMobile, isExpanded, onLinkClick }) {
     {
       title: "OUTREACH",
       links: [
-        { name: "Local Missions", path: "/coming-soon" },
+        { name: "Evangelism", path: "/coming-soon" },
         { name: "Global Missions", path: "/coming-soon" },
         { name: "Community Service", path: "/coming-soon" },
       ]
@@ -24,7 +24,7 @@ export default function MegaMenu({ isMobile, isExpanded, onLinkClick }) {
     {
       title: "EDUCATION",
       links: [
-        { name: "Foundation Class", path: "/coming-soon" },
+        { name: "Foundation School", path: "/coming-soon" },
         { name: "Sunday School", path: "/coming-soon" },
       ]
     }
