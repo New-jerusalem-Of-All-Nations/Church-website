@@ -46,27 +46,31 @@ export default function Hero() {
       <div className="hero-church-name">
         <img src="/images/another_logo.png" alt="Church Logo" />
       </div>
-      <div className="container">
-        <div className="hero-content">
-          <p className="hero-scripture">Welcome To</p>
-          <h1 className="hero-title">
-            NEW JERUSALEM OF ALL NATIONS,
-          </h1>
-          <p className="hero-subtitle">
-            The Holy City of GOD
+
+      {/* Hero Card */}
+      <div className="hero-card">
+        <div className="hero-card-content">
+          <p className="hero-card-tagline">IMPACTING NATIONS</p>
+          <h1 className="hero-card-title">The mouth piece of God</h1>
+          <p className="hero-card-description">
+            Welcome to the home of Prophet V.Dyani and New Jerusalem Church 
+            Experience divine healing, prophetic clarity, and spiritual transformation.
           </p>
-          <div className="hero-buttons">
-            <a
-              href="https://www.youtube.com/@messiahchannel6023"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-primary"
-            >
-              Join Us Now
+          <div className="hero-card-buttons">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="card-btn btn-navy">
+              FACEBOOK LIVE
             </a>
-            <a href="#sermons" className="btn btn-secondary">Read More</a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="card-btn btn-navy">
+              YOUTUBE LIVE
+            </a>
+            <a href="#contact" className="card-btn btn-maroon">
+              SUBMIT PRAYER
+            </a>
           </div>
         </div>
+        {/* <div className="hero-card-image">
+          <img src="/images/The_man_of_god_1copy.png" alt="Apostle" />
+        </div> */}
       </div>
 
       {/* Slide indicators */}
