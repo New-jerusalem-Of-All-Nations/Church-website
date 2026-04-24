@@ -1,3 +1,5 @@
+Backend/node_modules/
+NJ-new/node_modules/
 node_modules/
 .env
 dist/

@@ -1,43 +1,165 @@
 const express = require("express");
-const Newsletter = require("../Models/newsLetterModels"); // ensure path matches your folder structure
+const Newsletter = require("../Models/newsLetterModels");
 const router = express.Router();
+const auth = require("../middleware/auth");
+const role = require("../middleware/role");
 
-// POST /api/newsletter/subscribe
+// GET all subscribers (ADMIN ONLY)
+router.get("/", auth, role("admin", "superAdmin"), async (req, res) => {
+  try {
+    const { page = 1, limit = 10, search, status } = req.query;
+    const skip = (page - 1) * limit;
+
+    let filter = {};
+    if (search) {
+      filter.email = { $regex: search, $options: "i" };
+    }
+    if (status) filter.status = status;
+
+    const subscribers = await Newsletter.find(filter)
+      .limit(limit)
+      .skip(skip)
+      .sort({ createdAt: -1 });
+
+    const total = await Newsletter.countDocuments(filter);
+
+    res.status(200).json({
+      success: true,
+      data: subscribers,
+      pagination: { page: parseInt(page), limit: parseInt(limit), total }
+    });
+  } catch (error) {
+    console.error("Newsletter error:", error);
+    res.status(500).json({
+      success: false,
+      message: "Server error"
+    });
+  }
+});
+
+// GET single subscriber (ADMIN ONLY)
+router.get("/:id", auth, role("admin", "superAdmin"), async (req, res) => {
+  try {
+    const subscriber = await Newsletter.findById(req.params.id);
+
+    if (!subscriber) {
+      return res.status(404).json({
+        success: false,
+        message: "Subscriber not found"
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      data: subscriber
+    });
+  } catch (error) {
+    console.error("Newsletter error:", error);
+    res.status(500).json({
+      success: false,
+      message: "Server error"
+    });
+  }
+});
+
+// PUBLIC: Subscribe to newsletter
 router.post("/subscribe", async (req, res) => {
   const { email } = req.body;
 
   if (!email) {
-    return res.status(400).json({ success: false, message: "Email is required." });
+    return res.status(400).json({
+      success: false,
+      message: "Email is required",
+    });
   }
 
   try {
     const normalizedEmail = email.toLowerCase().trim();
 
-    // Check for existing subscriber
-    const existing = await Newsletter.findOne({ email: normalizedEmail });
-    if (existing) {
-      return res.status(409).json({ success: false, message: "Email is already subscribed." });
+    const exists = await Newsletter.findOne({ email: normalizedEmail });
+    if (exists) {
+      return res.status(409).json({
+        success: false,
+        message: "Email already subscribed",
+      });
     }
 
-    // Save new subscriber
-    const newSubscriber = new Newsletter({ email: normalizedEmail });
-    await newSubscriber.save();
+    const subscriber = await Newsletter.create({ email: normalizedEmail });
 
-    return res.status(201).json({ success: true, message: "Successfully subscribed!" });
+    res.status(201).json({
+      success: true,
+      message: "Successfully subscribed",
+      data: subscriber
+    });
   } catch (error) {
-    console.error("Newsletter subscription error:", error);
-    res.status(500).json({ success: false, message: "Server error. Please try again later." });
+    console.error("Newsletter error:", error);
+    res.status(500).json({
+      success: false,
+      message: "Server error",
+    });
   }
 });
 
-// GET /api/newsletter/
-router.get("/", async (req, res) => {
+// PUT update subscriber status (ADMIN ONLY)
+router.put("/:id", auth, role("admin", "superAdmin"), async (req, res) => {
   try {
-    const subscribers = await Newsletter.find().sort({ subscribedAt: -1 });
-    res.json({ success: true, subscribers });
-  } catch (err) {
-    console.error("Error fetching subscribers:", err);
-    res.status(500).json({ success: false, message: "Server error" });
+    const allowedFields = ["status", "notes"];
+
+    const updateData = {};
+    allowedFields.forEach(field => {
+      if (req.body.hasOwnProperty(field)) {
+        updateData[field] = req.body[field];
+      }
+    });
+
+    const subscriber = await Newsletter.findByIdAndUpdate(
+      req.params.id,
+      updateData,
+      { new: true }
+    );
+
+    if (!subscriber) {
+      return res.status(404).json({
+        success: false,
+        message: "Subscriber not found"
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      data: subscriber
+    });
+  } catch (error) {
+    console.error("Newsletter error:", error);
+    res.status(500).json({
+      success: false,
+      message: "Server error"
+    });
+  }
+});
+
+// DELETE unsubscribe (can be called by admin or subscriber)
+router.delete("/:id", async (req, res) => {
+  try {
+    const subscriber = await Newsletter.findByIdAndDelete(req.params.id);
+
+    if (!subscriber) {
+      return res.status(404).json({
+        success: false,
+        message: "Subscriber not found"
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Successfully unsubscribed"
+    });
+  } catch (error) {
+    console.error("Newsletter error:", error);
+    res.status(500).json({
+      success: false,
+      message: "Server error",
+    });
   }
 });
 

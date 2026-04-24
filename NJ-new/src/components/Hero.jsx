@@ -47,31 +47,40 @@ export default function Hero() {
         <img src="/images/another_logo.png" alt="Church Logo" />
       </div>
 
+      {/* Hero Main Text */}
+      <div className="hero-main-text">
+        <h1>New Jerusalem of All Nations</h1>
+      </div>
+
       {/* Hero Card */}
-      <div className="hero-card">
-        <div className="hero-card-content">
-          <p className="hero-card-tagline">IMPACTING NATIONS</p>
-          <h1 className="hero-card-title">The mouth piece of God</h1>
-          <p className="hero-card-description">
-            Welcome to the home of Prophet V.Dyani and New Jerusalem Church 
-            Experience divine healing, prophetic clarity, and spiritual transformation.
-          </p>
-          <div className="hero-card-buttons">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="card-btn btn-navy">
-              FACEBOOK LIVE
-            </a>
-            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="card-btn btn-navy">
-              YOUTUBE LIVE
-            </a>
-            <a href="#contact" className="card-btn btn-maroon">
-              SUBMIT PRAYER
-            </a>
+      <div className="hero-card-wrapper">
+        <div className="hero-card-image">
+          <img src="/images/The_man_of_god_1copy.png" alt="Prophet V.Dyani" />
+        </div>
+        <div className="hero-card">
+          <div className="hero-card-content">
+            <p className="hero-card-tagline">IMPACTING GENERATIONS</p>
+            <h3 className="hero-card-subtitle">New Jerusalem of All Nations</h3>
+            <h2 className="hero-card-title">The most trusted voice in prophecy</h2>
+            <p className="hero-card-description">
+              Welcome to the home of Apostle Mohlala Ministries and Shekinah Healing Ministries. 
+              Experience divine healing, prophetic clarity, and spiritual transformation.
+            </p>
+            <div className="hero-card-buttons">
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="card-btn btn-navy">
+                FACEBOOK LIVE
+              </a>
+              <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="card-btn btn-navy">
+                YOUTUBE LIVE
+              </a>
+              <a href="#contact" className="card-btn btn-maroon">
+                SUBMIT PRAYER
+              </a>
+            </div>
           </div>
         </div>
-        {/* <div className="hero-card-image">
-          <img src="/images/The_man_of_god_1copy.png" alt="Apostle" />
-        </div> */}
       </div>
+      
 
       {/* Slide indicators */}
       <div className="hero-indicators">

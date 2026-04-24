@@ -5,8 +5,14 @@ require("dotenv").config();
 
 const app = express();
 
-// Middleware
-app.use(cors());
+// ===== CORS - USING EXPRESS COR PACKAGE =====
+app.use(cors({
+  origin: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
+}));
+
 app.use(express.json());
 
 console.log("✅ Environment variables loaded");
@@ -23,6 +29,11 @@ const newsLetterRoutes = require("./Routes/newsLetterRouter");
 const eventRegistration = require("./Routes/eventsRegistrationRouter")
 const speakerRouter = require("./Routes/eventSpeakerRouter")
 const heroRouter = require("./Routes/eventHeroRouter")
+const authRoutes = require("./Routes/auth.routes")
+console.log("📡 Auth routes loaded:", typeof authRoutes);
+const adminSetupRoutes = require("./Routes/adminSetupRoutes")
+const adminRoutes = require("./Routes/adminRoutes")
+const memberRoutes = require("./Routes/memberRoutes")
 
 app.use("/api/events", eventRoutes);
 app.use("/api/getInTouch", getInTouchRoutes)
@@ -34,6 +45,16 @@ app.use("/api/eventsRegistration", eventRegistration)
 app.use("/api/speakers", speakerRouter)
 app.use("/uploads", express.static("uploads"));  // serve uploaded images
 app.use("/api/hero", heroRouter);
+app.use("/api/auth", authRoutes);
+app.use("/api/setup", adminSetupRoutes);
+app.use("/api/admin", adminRoutes);
+app.use("/api/members", memberRoutes);
+
+// Simple test route
+app.post("/api/test-endpoint", (req, res) => {
+  res.json({ success: true, message: "Test endpoint works" });
+});
+
 console.log("✅ Routes registered");
 // ========== END ROUTES ==========
 
@@ -87,6 +108,17 @@ const startServer = async () => {
       console.log(`   - http://localhost:${PORT}/api/newsletter`);
       console.log(`   - http://localhost:${PORT}/api/getInTouch`);
       console.log(`   - http://localhost:${PORT}/api/eventsRegistration`);
+      console.log(`   - http://localhost:${PORT}/api/setup/create-admin`);
+      console.log(`\n📊 DASHBOARD API ENDPOINTS:`);
+      console.log(`   Members: GET/POST /api/admin/members`);
+      console.log(`   Events: GET/POST /api/admin/events`);
+      console.log(`   Announcements: GET/POST /api/admin/announcements`);
+      console.log(`   Donations: GET/POST /api/admin/donations`);
+      console.log(`   Subscriptions: GET/POST /api/admin/subscriptions`);
+      console.log(`   Departments: GET/POST /api/admin/departments`);
+      console.log(`   Prayer Requests: GET/POST /api/admin/prayer-requests`);
+      console.log(`   Notifications: GET /api/admin/notifications`);
+      console.log(`   Dashboard Stats: GET /api/admin/dashboard/stats`);
       console.log(`   - http://localhost:${PORT}/api/debug-routes`);
     });
 
