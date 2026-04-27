@@ -17,12 +17,12 @@ export default function BankDetails() {
             <span className="divider"></span>
 
             <ul>
-              <li><strong>Bank:</strong> First National Bank (FNB)</li>
+              <li><strong>Bank:</strong> Capitec Business Account (CBA)</li>
               <li><strong>Account Name:</strong> New Jerusalem of All Nations</li>
-              <li><strong>Account Number:</strong> 6284 123 456</li>
-              <li><strong>Branch Code:</strong> 250655</li>
+              <li><strong>Account Number:</strong> 1053 785 208</li>
+              <li><strong>Branch Code:</strong> 470010</li>
               <li><strong>Account Type:</strong> Cheque Account</li>
-              <li><strong>Reference:</strong> Tithe / Offering</li>
+              <li><strong>Reference:</strong> Tithe / Offering / General / Support</li>
             </ul>
           </div>
 
@@ -33,7 +33,7 @@ export default function BankDetails() {
 
             <ul>
               <li><strong>Service:</strong> PayShap / eWallet</li>
-              <li><strong>Cell Number:</strong> 071 234 5678</li>
+              <li><strong>Cell Number:</strong> 071 117 6864</li>
               <li><strong>Account Name:</strong> NJOAN Giving</li>
               <li><strong>Purpose:</strong> Tithes &amp; Offerings</li>
             </ul>
