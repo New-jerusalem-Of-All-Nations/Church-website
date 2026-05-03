@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { API_ENDPOINTS } from '../config/api'
 
+
 export default function Contact() {
   const [isVisible, setIsVisible] = useState(false)
   const [formData, setFormData] = useState({
@@ -89,7 +90,7 @@ export default function Contact() {
           <p>
             Support our mission and ministries through secure online giving.
           </p>
-          <a href="/giving" className="btn btn-primary">Give Now</a>
+          <a href="../giving" className="btn btn-primary">Give Now</a>
         </div>
         <div className="contact-form">
           <form onSubmit={handleSubmit}>
