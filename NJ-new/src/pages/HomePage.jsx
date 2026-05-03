@@ -4,6 +4,7 @@ import Hero from '../components/Hero'
 import About from '../components/About'
 import Sermons from '../components/Sermons'
 import Events from '../components/Events'
+import MinistryCards from '../components/MinistryCards'
 import WatchSermon from '../components/WatchSermon'
 import Contact from '../components/Contact'
 import Newsletter from '../components/Newsletter'
@@ -19,6 +20,7 @@ function HomePage() {
         <About />
         <Sermons />
         <Events />
+        <MinistryCards />
         <WatchSermon />
         <Contact />
         <Newsletter />

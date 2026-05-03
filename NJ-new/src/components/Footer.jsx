@@ -5,7 +5,7 @@ export default function Footer() {
     <footer id="footer">
       <div className="container footer-grid">
         <div className="footer-column">
-          <h4>About NJIM</h4>
+          <h4>About NJOAN</h4>
           <p>
             A community of believers dedicated to growing in faith and serving
             the world with the love of Christ.

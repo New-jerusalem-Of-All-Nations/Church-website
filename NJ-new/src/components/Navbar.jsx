@@ -59,7 +59,7 @@ export default function Navbar({ isMobile, isMobileMenuOpen, onMobileMenuClose }
           <Link
             to="/giving"
             onClick={handleLinkClick}
-            className="block w-full text-center bg-brand-gold hover:bg-yellow-500 text-white px-8 py-4 rounded-full font-bold text-xl transition-colors shadow-lg"
+            className="block w-full text-center bg-brand-gold hover:bg-yellow-500 text-white px-8 py-3 rounded-full font-bold text-lg transition-colors shadow-lg"
           >
             GIVING
           </Link>

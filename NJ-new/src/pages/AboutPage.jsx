@@ -5,9 +5,6 @@ import CookieBanner from '../components/CookieBanner'
 import AboutHero from '../components/about/AboutHero'
 import WhoWeAre from '../components/about/WhoWeAre'
 import OurMission from '../components/about/OurMission'
-import BeliefCards from '../components/about/BeliefCards'
-import OurTeam from '../components/about/OurTeam'
-
 function AboutPage() {
   return (
     <div className="App">
@@ -16,8 +13,6 @@ function AboutPage() {
         <AboutHero />
         <WhoWeAre />
         <OurMission />
-        <BeliefCards />
-        <OurTeam />
       </main>
       <Footer />
       <CookieBanner />

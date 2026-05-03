@@ -55,9 +55,9 @@ export default function Events() {
   return (
     <section id="events" className={`content-section fade-in-section ${isVisible ? 'is-visible' : ''}`}>
       <div className="container">
-        <h2 className="section-title">Upcoming Events</h2>
-        <p className="section-subtitle">
-          Join us for fellowship and community activities.
+        <h2 className="section-title">Discover ways to connect</h2>
+        <p className="text-center text-2xl font-bold text-gray-600 mb-12">
+          There are always new ways to participate in what God is doing through our church, including events, evengelism, worship, and so much more..
         </p>
 
         {isLoading ? (
