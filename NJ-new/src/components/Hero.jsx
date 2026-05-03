@@ -109,7 +109,7 @@ export default function Hero() {
               </div>
               <div className=" absolute bottom-0 -right-16 w-[210px] h-[90%] pointer-events-none">
               <img 
-                src="../public/images/The_man_of_god_1copy.png" 
+                src="/images/The_man_of_god_1copy.png" 
                 alt="Prophet" 
                 className="w-full h-full object-cover object-top rounded-t-full shadow-[-10px_0_20px_rgba(0,0,0,0.1)]"
                 style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}
