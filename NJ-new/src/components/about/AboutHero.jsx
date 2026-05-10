@@ -58,7 +58,7 @@ const AboutSection = () => (
       variants={itemVariants}
       className="text-base md:text-lg text-gray-600 leading-relaxed mb-12 max-w-3xl"
     >
-      Established in 2010 by Prophet V.Dyani and Prophetess Amorin Dyani, is a church grounded in the word of God and is guided by the Holy Spirit in all its endeavours.
+      Established in 2010 by Prophet V.Dyani and Prophetess Amorin Dyani, a church grounded in the word of God and is guided by the Holy Spirit in all its endeavours.
       We believe in the redemptive power of Jesus Christ's sacrifice, through which we have been reconciled with God, and we identify as sons and daughters of the Most high.
       If you seek a congregation devoted to a Christ-centered life and global dissemination of the gospel, we warmly invite you to join us on our faith journey.
     </motion.p>
@@ -129,7 +129,7 @@ const WhoWeAreSection = () => (
         <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Our Vision</h3>
         <p className="text-gray-600 mb-8 flex-grow leading-relaxed text-center">
           New Jerusalem of All Nations is a church rooted in the word of God with a vision of:
-          Building Lives<br />Building homes <br />Building nations
+          Building Lives<br />Building Homes <br />Building Nations
         </p>
         <button className="w-full py-3.5 px-6 bg-gray-900 text-white rounded-full font-semibold hover:bg-gray-800 transition-colors duration-200">
           Learn more
