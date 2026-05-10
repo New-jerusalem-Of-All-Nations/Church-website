@@ -42,7 +42,7 @@ export default function MinistryCards() {
       title: 'Youth Ministry',
       description: 'Developing youth who influence culture.',
       bgColor: 'bg-gray-900',
-      link: '#'
+      image: '../images/PM.png'
     },
     {
       id: 5,
@@ -66,7 +66,7 @@ export default function MinistryCards() {
       className={`content-section fade-in-section ${isVisible ? 'is-visible' : ''}`}
     >
       <div className="container">
-        <h2 className="section-title text-center mb-12">A platform for Spiritual Growth</h2>
+        <h2 className="section-title text-center mb-1">A platform for Spiritual Growth</h2>
         <p className="text-center text-2xl font-bold text-gray-600 mb-12">Discover ways to  grow your faith and join the ministries that are shaping <br/> lives and building community.</p>
         
         {/* Top row - 2 cards */}
@@ -82,7 +82,7 @@ export default function MinistryCards() {
                   <p className="text-3xl font-bold leading-tight">{ministry.description}</p>
                 </div>
                 <div className="flex mt-8">
-                  <a href={ministry.link} className="inline-flex items-center font-semibold text-white group">
+                  <a href={ministry.image} className="inline-flex items-center font-semibold text-white group">
                     <span className="border-b-2 border-transparent group-hover:border-brand-gold transition-all duration-300 group-hover:text-brand-gold">Learn more</span> <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">›</span>
                   </a>
                 </div>
@@ -103,7 +103,7 @@ export default function MinistryCards() {
                   <h3 className="text-lg font-semibold mb-3 opacity-90">{ministry.title}</h3>
                   <p className="text-3xl font-bold leading-tight">{ministry.description}</p>
                 </div>
-                <a href={ministry.link} className="inline-flex items-center mt-8 font-semibold text-white group">
+                <a href={ministry.image} className="inline-flex items-center mt-8 font-semibold text-white group">
                   <span className="border-b-2 border-transparent group-hover:border-brand-gold transition-all duration-300 group-hover:text-brand-gold">Learn more</span> <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">›</span>
                 </a>
               </div>
@@ -123,7 +123,7 @@ export default function MinistryCards() {
                   <h3 className="text-lg font-semibold mb-3 opacity-90">{ministry.title}</h3>
                   <p className="text-3xl font-bold leading-tight">{ministry.description}</p>
                 </div>
-                <a href={ministry.link} className="inline-flex items-center mt-8 font-semibold text-white group">
+                <a href={ministry.image} className="inline-flex items-center mt-8 font-semibold text-white group">
                   <span className="border-b-2 border-transparent group-hover:border-brand-gold transition-all duration-300 group-hover:text-brand-gold">Learn more</span> <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">›</span>
                 </a>
               </div>
