@@ -97,10 +97,10 @@ export default function Hero() {
 
               {/* Buttons */}
               <div className="flex flex-wrap gap-3 md:gap-4">
-                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="bg-[#1e3a8a] text-white px-6 py-3.5 rounded-full text-xs md:text-sm font-bold tracking-wider hover:bg-blue-900 transition-colors shadow-lg">
+                <a href="https://www.facebook.com/NewJerusalemMinistr" target="_blank" rel="noopener noreferrer" className="bg-[#1e3a8a] text-white px-6 py-3.5 rounded-full text-xs md:text-sm font-bold tracking-wider hover:bg-blue-900 transition-colors shadow-lg">
                   FACEBOOK LIVE
                 </a>
-                <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="bg-[#1e3a8a] text-white px-6 py-3.5 rounded-full text-xs md:text-sm font-bold tracking-wider hover:bg-blue-900 transition-colors shadow-lg">
+                <a href="https://www.youtube.com/@messiahchannel6023" target="_blank" rel="noopener noreferrer" className="bg-[#1e3a8a] text-white px-6 py-3.5 rounded-full text-xs md:text-sm font-bold tracking-wider hover:bg-blue-900 transition-colors shadow-lg">
                   YOUTUBE LIVE
                 </a>
                 <a href="#contact" className="bg-[#8b0000] text-white px-6 py-3.5 rounded-full text-xs md:text-sm font-bold tracking-wider hover:bg-red-900 transition-colors shadow-lg">
