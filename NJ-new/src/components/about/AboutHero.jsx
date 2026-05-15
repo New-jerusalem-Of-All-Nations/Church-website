@@ -101,9 +101,7 @@ const WhoWeAreSection = () => (
 
     <motion.div variants={itemVariants} className="mb-16 text-gray-300">
       {/* Custom Hollow Cross Icon */}
-      {/* <svg width="40" height="56" viewBox="0 0 24 36" fill="none" stroke="currentColor" strokeWidth="1.5" className="mx-auto">
-        <path d="M10 2V12H2V18H10V34H14V18H22V12H14V2Z" />
-      </svg> */}
+     <img  className="w-14 h-14" src="../images/another_logo.png" alt="church logo" />
     </motion.div>
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
@@ -116,7 +114,7 @@ const WhoWeAreSection = () => (
         <p className="text-gray-600 mb-8 flex-grow leading-relaxed">
           Making disciples of all nations. Teaching all nations to observe all that Jesus commanded. We are here to help you deepen your faith and discover your purpose. MATT 28:19-20
         </p>
-        <button className="w-full py-3.5 px-6 bg-gray-900 text-white rounded-full font-semibold hover:bg-gray-800 transition-colors duration-200">
+        <button className="w-full py-3.5 px-6 bg-brand-gold text-white rounded-full font-semibold hover:bg-gray-800 transition-colors duration-200">
           Learn more
         </button>
       </motion.div>
@@ -128,10 +126,10 @@ const WhoWeAreSection = () => (
       >
         <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Our Vision</h3>
         <p className="text-gray-600 mb-8 flex-grow leading-relaxed text-center">
-          New Jerusalem of All Nations is a church rooted in the word of God with a vision of:
-          Building Lives<br />Building Homes <br />Building Nations
+          New Jerusalem of All Nations is a church rooted in the word of God with a vision of: <br />
+        Building Lives<br />Building Homes <br />Building Nations
         </p>
-        <button className="w-full py-3.5 px-6 bg-gray-900 text-white rounded-full font-semibold hover:bg-gray-800 transition-colors duration-200">
+        <button className="w-full py-3.5 px-6 bg-brand-gold text-white rounded-full font-semibold hover:bg-gray-800 transition-colors duration-200">
           Learn more
         </button>
       </motion.div>
